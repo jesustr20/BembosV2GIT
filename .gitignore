@@ -1,0 +1,6 @@
+.vscode/
+myvenv
+aplauso
+Procfile
+manage.py
+.env

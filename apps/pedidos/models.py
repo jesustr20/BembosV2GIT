@@ -21,7 +21,7 @@ class Colaborador(models.Model):
 class Rol(models.Model):
     id = models.AutoField(primary_key=True)
     rol = models.CharField(max_length=8)
-    colaborador = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
+    colaborador = models.ManyToManyField(Colaborador)
 
     class Meta:
         verbose_name = 'Rol'
@@ -47,7 +47,7 @@ class Ingrediente(models.Model):
 class TipoIngrediente(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100, null = True, blank=True)
-    ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
+    ingrediente = models.ManyToManyField(Ingrediente)
 
     def __str__(self):
         return f'{str(self.nombre)}'

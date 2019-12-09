@@ -14,7 +14,7 @@ class ColaboradorHySerializers(serializers.ModelSerializer):
         fields = ['id','user','Localidad','edad']
 
 class RolHySerializers(serializers.ModelSerializer):
-    colaborador = ColaboradorHySerializers()
+    colaborador = ColaboradorHySerializers(many=True, read_only=False)
     class Meta:
         model = Rol
         fields = ['id','rol', 'colaborador']
@@ -28,7 +28,7 @@ class IngredienteHySerializer(serializers.ModelSerializer):
         #fields = ['id','ingrediente','precio','cantidad','imagen']
 
 class TipoIngredienteHySerializer(serializers.ModelSerializer):
-    ingrediente = IngredienteHySerializer(write_only=True)
+    ingrediente = IngredienteHySerializer(many=True, read_only=False)
     class Meta:
         model = TipoIngrediente
         fields = ['id','nombre','ingrediente']

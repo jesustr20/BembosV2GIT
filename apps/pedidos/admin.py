@@ -6,13 +6,13 @@ class ColaboradorAdmin(admin.ModelAdmin):
     list_display = ['id','user', 'Localidad', 'edad']
 
 class RolAdmin(admin.ModelAdmin):
-    list_display = ['id','rol','colaborador']
+    list_display = ['id','rol']
 
 class IngredienteAdmin(admin.ModelAdmin):
     list_display = ['id','ingrediente', 'precio', 'cantidad','imagen']
 
 class TipoIngredienteAdmin(admin.ModelAdmin):
-    list_display = ['id','nombre','ingrediente']
+    list_display = ['id','nombre']
 
 class EstadoPedidoAdmin(admin.ModelAdmin):
     list_display = ['id','estado']

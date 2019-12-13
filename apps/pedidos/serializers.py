@@ -5,19 +5,21 @@ from django.contrib.auth.models import User
 class AuthHySerializers(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id','password','username','first_name','last_name']
+        fields = ['id','first_name','last_name']
+
+
+class RolHySerializers(serializers.ModelSerializer):
+    #colaborador = ColaboradorHySerializers(many=True, read_only=False)
+    class Meta:
+        model = Rol
+        fields = ['id','roles']
 
 class ColaboradorHySerializers(serializers.ModelSerializer):
     user = AuthHySerializers()
+    roles = RolHySerializers()
     class Meta:
         model = Colaborador
-        fields = ['id','user','Localidad','edad']
-
-class RolHySerializers(serializers.ModelSerializer):
-    colaborador = ColaboradorHySerializers(many=True, read_only=False)
-    class Meta:
-        model = Rol
-        fields = ['id','rol', 'colaborador']
+        fields = ['id','user','Localidad','edad','roles']
 
 #MAGALY
     

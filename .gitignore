@@ -1,6 +1,7 @@
 .vscode/
 myvenv
-aplauso
-Procfile
-manage.py
 .env
+aplauso
+dbembos
+procfile
+gitignore

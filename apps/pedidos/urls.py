@@ -9,8 +9,8 @@ from .viewsets import EstadoPedidoHypViewSet, PedidoHypViewSet, DetallePedidoHyp
 router = routers.DefaultRouter()
 
 #HYPERLINKEDSERIALIZER - viewsets
-router.register(r'colaborador', ColaboradorHypViewSet)
 router.register(r'rol', RolHypViewSet)
+router.register(r'colaborador', ColaboradorHypViewSet)
 router.register(r'Ingredientes', IngredienteHypViewSet)
 router.register(r'TipoIngredientes', TipoIngredienteHypViewSet)
 router.register(r'EstadoPedidos', EstadoPedidoHypViewSet)

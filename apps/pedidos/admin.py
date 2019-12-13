@@ -2,11 +2,12 @@ from django.contrib import admin
 from .models import Colaborador, Rol, TipoIngrediente, Ingrediente ,EstadoPedido, Pedido, DetallePedido
 # Register your models here.
 
-class ColaboradorAdmin(admin.ModelAdmin):
-    list_display = ['id','user', 'Localidad', 'edad']
 
 class RolAdmin(admin.ModelAdmin):
-    list_display = ['id','rol']
+    list_display = ['id','roles']
+
+class ColaboradorAdmin(admin.ModelAdmin):
+    list_display = ['id','user', 'Localidad', 'edad', 'roles']
 
 class IngredienteAdmin(admin.ModelAdmin):
     list_display = ['id','ingrediente', 'precio', 'cantidad','imagen']

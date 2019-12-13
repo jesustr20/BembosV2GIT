@@ -3,12 +3,25 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Rol(models.Model):
+    id = models.AutoField(primary_key=True)
+    roles = models.CharField(max_length=8)
+    #colaborador = models.ManyToManyField(Colaborador)
+
+    class Meta:
+        verbose_name = 'Rol'
+        verbose_name_plural = 'Rol'
+        ordering = ['roles']
+
+    def __str__(self):
+        return f'{self.roles}'
+
 class Colaborador(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     Localidad = models.CharField(max_length=100)
     edad = models.IntegerField()
-    #rol = models.ForeignKey(Rol, on_delete=models.CASCADE)
+    roles = models.ForeignKey(Rol, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Colaborador'
@@ -18,18 +31,6 @@ class Colaborador(models.Model):
     def __str__(self):
         return f'{self.user.username}'
 
-class Rol(models.Model):
-    id = models.AutoField(primary_key=True)
-    rol = models.CharField(max_length=8)
-    colaborador = models.ManyToManyField(Colaborador)
-
-    class Meta:
-        verbose_name = 'Rol'
-        verbose_name_plural = 'Rol'
-        ordering = ['rol']
-
-    def __str__(self):
-        return f'{self.rol}'
 
 #parte de magaly
 

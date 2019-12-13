@@ -11,3 +11,4 @@ Panel del DRF consumo directo: (no recomendable para pruebas)
 Panel de SWAGGER para realizar pruebas con la api:
 -> https://bembosv2.herokuapp.com/api
 
+<img height="400px" src="https://github.com/jesustr20/BembosV2GIT/blob/master/Documentacion/panelSwagger.PNG"/>
